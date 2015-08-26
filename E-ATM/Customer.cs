@@ -42,7 +42,7 @@ namespace E_ATM
             db.Insert(sql);
 
         }
-        private string[] GetCustomerInfo(){
+        public string[] GetCustomerInfo(){
             string[] customerInfo = new string[] { firstName, lastName, addressOne, addressTwo, telephoneNumber };
             return customerInfo;
         }
