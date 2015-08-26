@@ -26,11 +26,11 @@ namespace E_ATM
         {
 
 
-            dbHostname = "localhost";
-            dbDatabase = "E_ATM";
-            dbUsername = "root";
-            dbPassword = "Ndb103191!#!";
-            dbPort = "3307";
+            dbHostname = "server";
+            dbDatabase = "database";
+            dbUsername = "username";
+            dbPassword = "password";
+            dbPort = "port if not default";
             string connectionString;
             connectionString = "SERVER=" + dbHostname + ";" + "PORT="+dbPort+";"+ "DATABASE=" +
             dbDatabase + ";" + "UID=" + dbUsername + ";" + "PASSWORD=" + dbPassword + ";";
