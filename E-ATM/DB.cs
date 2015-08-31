@@ -26,11 +26,11 @@ namespace E_ATM
         {
 
 
-            dbHostname = "server";
-            dbDatabase = "database";
-            dbUsername = "username";
-            dbPassword = "password";
-            dbPort = "port if not default";
+            dbHostname = "localhost";
+            dbDatabase = "E_ATM";
+            dbUsername = "root";
+            dbPassword = "Ndb103191!#!";
+            dbPort = "3307";
             string connectionString;
             connectionString = "SERVER=" + dbHostname + ";" + "PORT="+dbPort+";"+ "DATABASE=" +
             dbDatabase + ";" + "UID=" + dbUsername + ";" + "PASSWORD=" + dbPassword + ";";
@@ -76,15 +76,24 @@ namespace E_ATM
                 return false;
             }
         }
-        public void Insert(string query)
+        public string Insert(string query)
         {
+            string id="";
             if (this.OpenConnection() == true)
             {
+                
                 MySqlCommand queryMysql = new MySqlCommand(query, connection);
                 queryMysql.ExecuteNonQuery();
+                 id = queryMysql.LastInsertedId.ToString();
                 this.CloseConnection();
 
+                return id;
             }
+            else
+            {
+                return id;
+            }
+            
         }
 
         //Update statement
